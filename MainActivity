@@ -1,0 +1,33 @@
+package com.example.recycleview
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_main.rvDemo
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        //tạo danh sách
+        val ds = mutableListOf<OutData>()
+        ds.add(OutData(R.drawable.haikyuu, "Haikyuu", "Manga"))
+        ds.add(OutData(R.drawable.bathanh, "Bất hạnh và bất tử", "Manga"))
+        ds.add(OutData(R.drawable.thamtu, "Đặc nhiệm thám tử", "Manga"))
+        ds.add(OutData(R.drawable.thantien, "Ta là đại thần tiên", "Manhua"))
+        ds.add(OutData(R.drawable.haikyuu, "Haikyuu", "Manga"))
+        ds.add(OutData(R.drawable.bathanh, "Bất hạnh và bất tử", "Manga"))
+        ds.add(OutData(R.drawable.thamtu, "Đặc nhiệm thám tử", "Manga"))
+        ds.add(OutData(R.drawable.thantien, "Ta là đại thần tiên", "Manhua"))
+
+        val adapterv = RvAdapter(ds)
+        rvDemo.adapter = adapterv
+        rvDemo.layoutManager = LinearLayoutManager(
+            this,
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
+    }
+}
