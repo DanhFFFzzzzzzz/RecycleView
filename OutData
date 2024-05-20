@@ -1,0 +1,9 @@
+package com.example.recycleview
+
+class OutData(
+    val image: Int,
+    val tenTruyen: String,
+    val moTa: String
+) {
+
+}
